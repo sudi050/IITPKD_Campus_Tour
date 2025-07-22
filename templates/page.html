@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>QR Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div style="width: 100%; height: auto;">
+  <div class="app">
+    <h2>{{ qr[1] }}</h2> 
+    <p>{{ qr[2] }}</p> 
+    <br>
+    <hr>
+    <h2> The Next Challenge</h2>
+    <p>{{qr[3]}}</p>
+    
+    {% if qr[4] %}
+    <img src="{{ qr[4] }}" alt="Image" class="display-img">
+    {% endif %}
+  </div>
+  <div>
+  <a href="{{ url_for('scan') }}">
+    <button id="back-btn">Back to Home</button>
+  </a>
+  </div>
+</div>
+</body>
+</html>

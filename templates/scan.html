@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Scan QR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
+  <style>
+    #scan-container {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      background-color: aliceblue;
+      opacity: 100%;
+      border-radius: 10%;
+    }
+    #reader {
+      width: 300px;
+      margin: 0 auto;
+    }
+    #scan-text {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="scan-container">
+    <div id="scan-text">Scan the QR Code</div>
+    <div id="reader"></div>
+  </div>
+
+  <script>
+    function onScanSuccess(decodedText, decodedResult) {
+      console.log(`Code matched = ${decodedText}`);
+      window.location.href = "/page/" + decodedText;
+      html5QrcodeScanner.clear();
+    }
+
+    const html5QrcodeScanner = new Html5QrcodeScanner(
+      "reader", {
+        fps: 10,
+        qrbox: 250,
+        rememberLastUsedCamera: true,
+        showTorchButtonIfSupported: true,
+        supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA] // Disable file scan
+      }
+    );
+
+    html5QrcodeScanner.render(onScanSuccess);
+  </script>
+
+
+</body>
+</html>

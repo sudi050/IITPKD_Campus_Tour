@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div>
+  <div class="app">
+    <h2>Hi Folks, The hunt is over and we believe that you have explored most of the campus. Please just fill this form before you leave.</h2>
+
+    <form method="post" action="/submit-feedback">
+      <div class="form-group">
+        <label for="rating_event">1. Rate the event (out of 5):</label>
+        <select name="rating_event" id="rating_event" class="form-control" required>
+          <option value="" disabled selected>Select</option>
+          <option value="1">1 - Poor</option>
+          <option value="2">2 - Fair</option>
+          <option value="3">3 - Good</option>
+          <option value="4">4 - Very Good</option>
+          <option value="5">5 - Excellent</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="rating_portal">2. Rate the web portal (out of 5):</label>
+        <select name="rating_portal" id="rating_portal" class="form-control" required>
+          <option value="" disabled selected>Select</option>
+          <option value="1">1 - Poor</option>
+          <option value="2">2 - Fair</option>
+          <option value="3">3 - Good</option>
+          <option value="4">4 - Very Good</option>
+          <option value="5">5 - Excellent</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="comments">3. Suggestions on the event or the council:</label><br>
+        <textarea id="comments" name="comments" class="form-control" rows="4" placeholder="Your suggestions..."></textarea>
+      </div>
+
+      <button type="submit" id="submit-bn">Submit</button>
+    </form>
+
+  </div>
+  <div class="footer">
+    <p>&copy; PG affairs council</p>
+    <p>mail-at: <a href="mailto:pg-sec@iitpkd.ac.in">pg-sec@iitpkd.ac.in</a></p>
+    <p> Source code: <a href="">Github</a></p>
+  </div>
+</body>
+</html>

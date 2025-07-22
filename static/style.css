@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #86ade7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url("./nila22.PNG") no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .login-box {
+    background-color: rgba(58, 53, 53, 0.9);
+    padding: 50px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 80%;
+    color: #fff;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f0d332;
+    font-size: 40px;
+  }
+  
+  input[type="text"],input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 40px;
+    background-color: #ffffff;
+    color: #333;
+  }
+  
+  input::placeholder {
+    color: #999;
+  }
+  
+  button {
+    width: 80%;
+    margin-left: 10%;
+    padding: 12px;
+    background-color: #0547b1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 40px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #000000;
+  }
+  
+  .app{
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px 0px;
+    margin-left: 10%;
+    width: 80%;
+    background-color: aliceblue;
+    opacity: 80%;   
+    border-radius: 10%;
+  }
+
+  #reader{
+    height: 30%;
+  }
+
+  .footer{
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px 0px;
+    width: 100%;
+    background-color: aliceblue;
+    opacity: 50%;
+    position: fixed;
+    bottom: 0;
+  }
+
+  /* === MEDIA QUERIES === */
+  @media (max-width: 400px) {
+    .login-box {
+      padding: 20px 15px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    input,
+    button {
+      font-size: 15px;
+    }
+  }
+  
