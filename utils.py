@@ -28,7 +28,7 @@ def create_feedback(username,rating_event,rating_portal,comments):
     cur = con.cursor()
     cur.execute("""
         INSERT INTO feedback (username, rating_event, rating_portal, comments)
-        VALUES (?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?)
     """, (username, rating_event, rating_portal, comments))
     con.commit()
     con.close()
@@ -36,7 +36,7 @@ def create_feedback(username,rating_event,rating_portal,comments):
 def get_feedbacks():
     con = sqlite3.connect("data.db")
     cur = con.cursor()
-    cur.execute("SELECT username, rating_event, rating_portal, comments FROM feedback")
+    cur.execute("SELECT username, rating_event, rating_portal, commentsgit FROM feedback")
     feedbacks = cur.fetchall()
     con.close()
     return feedbacks

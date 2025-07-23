@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Logs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .table-container {
+            width: 95%;
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #001e4d;
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+            color: #001e4d;
+        }
+    </style>
+    </head>
+<body>
+<div class="table-container">
+    <h2>Log Records</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>QR</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in logs %}
+            <tr>
+                <td>{{ log[0] }}</td>
+                <td>{{ log[1] }}</td>
+                <td>{{ log[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{{ url_for('scan') }}">
+            <button id="back-btn">Back to Home</button>
+        </a>
+    </div>
+</div>
+</body>
+</html>

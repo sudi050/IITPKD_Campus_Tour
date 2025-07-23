@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Records</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .table-container {
+      width: 95%;
+      max-width: 800px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+
+    th {
+      background-color: #001e4d;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      color: #001e4d;
+    }
+  </style>
+</head>
+<body>
+  <div class="table-container">
+    <h2>Feedback Submissions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Event Rating</th>
+          <th>Portal Rating</th>
+          <th>Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for fb in feedbacks %}
+        <tr>
+          <td>{{ fb[0] }}</td>
+          <td>{{ fb[1] }}</td>
+          <td>{{ fb[2] }}</td>
+          <td>{{ fb[3] or "—" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
